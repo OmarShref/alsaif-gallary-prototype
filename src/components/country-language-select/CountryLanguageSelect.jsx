@@ -19,16 +19,25 @@ const CountryLanguageSelect = () => {
           </div>
           <div class={styles.countries}>
             <div class={styles.country}>
+              <i
+                class={"fa-solid fa-location-pin " + styles.selectedCountry}
+              ></i>
+              <i class="fa-solid fa-location-pin"></i>
               <img src={kuFlag} alt="" />
-              <i class="fa-solid fa-location-pin"></i>
             </div>
             <div class={styles.country}>
+              {/* <i
+                class={"fa-solid fa-location-pin " + styles.selectedCountry}
+              ></i> */}
+              <i class="fa-solid fa-location-pin"></i>
               <img src={uaFlag} alt="" />
-              <i class="fa-solid fa-location-pin"></i>
             </div>
             <div class={styles.country}>
-              <img src={saFlag} alt="" />
+              {/* <i
+                class={"fa-solid fa-location-pin " + styles.selectedCountry}
+              ></i> */}
               <i class="fa-solid fa-location-pin"></i>
+              <img src={saFlag} alt="" />
             </div>
           </div>
           <div class={styles.devider}>

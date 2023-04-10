@@ -43,7 +43,14 @@
 .country {
   position: relative;
 }
+.countries .country .selectedCountry {
+  position: absolute;
+  scale: 1.1;
+  color: firebrick;
+  top: 2px;
+}
 .countries i {
+  position: relative;
   font-size: 105px;
   color: #b5adb6;
 }
