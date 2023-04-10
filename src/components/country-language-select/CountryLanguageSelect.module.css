@@ -55,7 +55,7 @@
 }
 .countries .country .selectedCountry {
   position: absolute;
-  color: firebrick;
+  color: var(--color-accent);
   top: 2px;
   transform: scale(1.15);
   -webkit-transform: scale(1.15);
