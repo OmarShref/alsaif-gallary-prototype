@@ -1,5 +1,6 @@
 import styles from "./CountryLanguageSelect.module.css";
 import { Show, createSignal } from "solid-js";
+import { A } from "@solidjs/router";
 import logo from "../../assets/logo.svg";
 import saFlag from "../../assets/Flag_of_Saudi_Arabia_(state).svg.png";
 import uaFlag from "../../assets/Flag_of_the_United_Arab_Emirates.svg.png";
@@ -13,6 +14,7 @@ const CountryLanguageSelect = () => {
   return (
     <>
       <div class={styles.container}>
+        <div class={styles.overlay}></div>
         <div class={styles.contents}>
           <img src={logo} alt="comoany logo" class={styles.logo} />
           <div class={styles.devider}>
@@ -84,10 +86,10 @@ const CountryLanguageSelect = () => {
             <button>العربية</button>
           </div>
         </div>
-        <div class={styles.forward}>
+        <A href="/main" class={styles.forward}>
           <i class="fa-solid fa-angles-right"></i>
           <span>تخطي</span>
-        </div>
+        </A>
       </div>
     </>
   );

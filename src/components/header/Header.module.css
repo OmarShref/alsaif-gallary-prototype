@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container img {
+  width: 35px;
+  margin: 10px 20px;
+}

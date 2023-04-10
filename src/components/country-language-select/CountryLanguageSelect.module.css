@@ -7,8 +7,14 @@
   background-image: url(../../assets/woman-chef-cooking-vegetables-pan_1303-22287.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  backdrop-filter: blur(7px);
+  background-position-x: -600px;
+}
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
 }
 .contents {
   position: relative;
@@ -49,9 +55,13 @@
 }
 .countries .country .selectedCountry {
   position: absolute;
-  scale: 1.1;
   color: firebrick;
   top: 2px;
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
 }
 .countries i {
   position: relative;
