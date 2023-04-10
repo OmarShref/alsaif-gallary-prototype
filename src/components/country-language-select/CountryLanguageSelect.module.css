@@ -1,10 +1,14 @@
 .container {
   position: relative;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(../../assets/woman-chef-cooking-vegetables-pan_1303-22287.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(7px);
 }
 .contents {
   position: relative;
