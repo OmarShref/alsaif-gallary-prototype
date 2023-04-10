@@ -1,10 +1,22 @@
 .container {
+  position: relative;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contents {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  top: -40px;
+}
+.logo {
+  margin-bottom: 20px;
 }
 .devider {
   color: #fefdfd;
@@ -58,17 +70,25 @@
   justify-content: space-between;
   gap: 40px;
   padding: 0px 20px;
+  margin-top: 20px;
 }
 .languages button {
   flex-grow: 1;
   background-color: white;
   font-size: 17px;
   font-weight: 600;
-  padding: 6px 0px;
+  padding: 6px 0px 8px;
   border-style: none;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+.forward {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  font-size: 28px;
+  text-decoration: underline;
 }

@@ -8,38 +8,44 @@ const CountryLanguageSelect = () => {
   return (
     <>
       <div class={styles.container}>
-        <img src={logo} alt="comoany logo" />
-        <div class={styles.devider}>
-          <div class={styles.line}></div>
-          <p>Country</p>
-          <div class={styles.line}></div>
-          <p>البلد</p>
-          <div class={styles.line}></div>
-        </div>
-        <div class={styles.countries}>
-          <div class={styles.country}>
-            <img src={kuFlag} alt="" />
-            <i class="fa-solid fa-location-pin"></i>
+        <div class={styles.contents}>
+          <img src={logo} alt="comoany logo" class={styles.logo} />
+          <div class={styles.devider}>
+            <div class={styles.line}></div>
+            <p>Country</p>
+            <div class={styles.line}></div>
+            <p>البلد</p>
+            <div class={styles.line}></div>
           </div>
-          <div class={styles.country}>
-            <img src={uaFlag} alt="" />
-            <i class="fa-solid fa-location-pin"></i>
+          <div class={styles.countries}>
+            <div class={styles.country}>
+              <img src={kuFlag} alt="" />
+              <i class="fa-solid fa-location-pin"></i>
+            </div>
+            <div class={styles.country}>
+              <img src={uaFlag} alt="" />
+              <i class="fa-solid fa-location-pin"></i>
+            </div>
+            <div class={styles.country}>
+              <img src={saFlag} alt="" />
+              <i class="fa-solid fa-location-pin"></i>
+            </div>
           </div>
-          <div class={styles.country}>
-            <img src={saFlag} alt="" />
-            <i class="fa-solid fa-location-pin"></i>
+          <div class={styles.devider}>
+            <div class={styles.line}></div>
+            <p>Language</p>
+            <div class={styles.line}></div>
+            <p>اللغة</p>
+            <div class={styles.line}></div>
+          </div>
+          <div class={styles.languages}>
+            <button>English</button>
+            <button>العربية</button>
           </div>
         </div>
-        <div class={styles.devider}>
-          <div class={styles.line}></div>
-          <p>Language</p>
-          <div class={styles.line}></div>
-          <p>اللغة</p>
-          <div class={styles.line}></div>
-        </div>
-        <div class={styles.languages}>
-          <button>English</button>
-          <button>العربية</button>
+        <div class={styles.forward}>
+          <i class="fa-solid fa-angles-right"></i>
+          <span>تخطي</span>
         </div>
       </div>
     </>
