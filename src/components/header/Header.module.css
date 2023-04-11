@@ -7,16 +7,16 @@
 }
 .logo {
   margin: 10px 17.5px;
-  width: 35px;
+  width: 30px;
 }
 .notification_icon {
   margin: 10px 20px;
-  width: 30px;
+  width: 28px;
 }
 .search_box {
   flex-grow: 1;
   background-color: var(--color-light-gray);
-  padding: 8px 20px 11px;
+  padding: 6px 20px 9px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
   -o-border-radius: 3px;
 }
 .search_icon {
-  width: 30px;
+  width: 28px;
 }
 .search_box input {
   width: 100%;
