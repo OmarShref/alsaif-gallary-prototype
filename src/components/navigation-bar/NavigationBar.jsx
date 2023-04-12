@@ -37,6 +37,15 @@ const NavigationBar = () => {
   return (
     <>
       <div class={styles.container}>
+        <div class={styles.active_indicator_container}>
+          <div class={styles.active_indicator_grid_col}>
+            <span id={styles.active_indicator}></span>
+          </div>
+          <div class={styles.active_indicator_grid_col}></div>
+          <div class={styles.active_indicator_grid_col}></div>
+          <div class={styles.active_indicator_grid_col}></div>
+          <div class={styles.active_indicator_grid_col}></div>
+        </div>
         {/* profile link  */}
         <div
           class={styles.grid_col}
@@ -48,7 +57,6 @@ const NavigationBar = () => {
             setHomeIsSelected(false);
           }}
         >
-          <span id={styles.active_indicator}></span>
           <A
             href="#"
             class={`${profileIsSelected() && styles.active_link} ${
