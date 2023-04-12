@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: start;
 }
-a {
+.nav_link {
   position: relative;
   width: 60px;
   height: 60px;
@@ -30,8 +30,13 @@ a {
   -o-border-radius: 50%;
   user-select: none;
   pointer-events: none;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
 }
-a img {
+.nav_link img {
   width: 25px;
 }
 .active_link {
@@ -57,5 +62,10 @@ a img {
   -moz-transform: translateY(-45%);
   -ms-transform: translateY(-45%);
   -o-transform: translateY(-45%);
-  left: 0%;
+  left: 400%;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
 }

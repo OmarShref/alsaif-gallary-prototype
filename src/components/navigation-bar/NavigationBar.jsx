@@ -1,6 +1,6 @@
 import styles from "./NavigationBar.module.css";
 import { A } from "@solidjs/router";
-import { Show, createSignal } from "solid-js";
+import { Show, createSignal, onMount } from "solid-js";
 import homeIcon from "../../assets/home-icon.svg";
 import homeIconActive from "../../assets/home-icon-active.svg";
 import categoriesIcon from "../../assets/categories-icon.svg";
@@ -17,18 +17,23 @@ const NavigationBar = () => {
   const [profileIsSelected, setProfileIsSelected] = createSignal(false);
   const [offersIsSelected, setOffersIsSelected] = createSignal(false);
   const [shoppingCartIsSelected, setShoppingCartIsSelected] =
-    createSignal(true);
+    createSignal(false);
   const [categoriesIsSelected, setCategoriesIsSelected] = createSignal(false);
-  const [homeIsSelected, setHomeIsSelected] = createSignal(false);
-  // get the moving span
-  const activeIndicator = document.getElementById(`${styles.active_indicator}`);
-  activeIndicator.style.backgroundColor = "#000000";
-  // set span moving according to every link
-  // [...document.getElementsByClassName(`${styles.grid_col}`)].map((link, i) => {
-  //   link.addEventListener("click", () => {
-  //     activeIndicator.style.left = `calc(${i}*100%)`;
-  //   });
-  // });
+  const [homeIsSelected, setHomeIsSelected] = createSignal(true);
+  onMount(() => {
+    // get the moving span
+    const activeIndicator = document.getElementById(
+      `${styles.active_indicator}`
+    );
+    // set span moving according to every link
+    [...document.getElementsByClassName(`${styles.grid_col}`)].map(
+      (link, i) => {
+        link.addEventListener("click", () => {
+          activeIndicator.style.left = `calc(${i}*100%)`;
+        });
+      }
+    );
+  });
   return (
     <>
       <div class={styles.container}>
@@ -44,8 +49,12 @@ const NavigationBar = () => {
           }}
         >
           <span id={styles.active_indicator}></span>
-
-          <A href="#" class={profileIsSelected() && styles.active_link}>
+          <A
+            href="#"
+            class={`${profileIsSelected() && styles.active_link} ${
+              styles.nav_link
+            }`}
+          >
             <Show
               when={profileIsSelected()}
               fallback={<img src={profileIcon} alt="profile icon" />}
@@ -66,7 +75,12 @@ const NavigationBar = () => {
             setHomeIsSelected(false);
           }}
         >
-          <A href="#" class={offersIsSelected() && styles.active_link}>
+          <A
+            href="#"
+            class={`${offersIsSelected() && styles.active_link} ${
+              styles.nav_link
+            }`}
+          >
             <Show
               when={offersIsSelected()}
               fallback={<img src={offersIcon} alt="offers icon" />}
@@ -87,7 +101,12 @@ const NavigationBar = () => {
             setHomeIsSelected(false);
           }}
         >
-          <A href="#" class={shoppingCartIsSelected() && styles.active_link}>
+          <A
+            href="#"
+            class={`${shoppingCartIsSelected() && styles.active_link} ${
+              styles.nav_link
+            }`}
+          >
             <Show
               when={shoppingCartIsSelected()}
               fallback={<img src={shoppingCartIcon} alt="shopping cart icon" />}
@@ -108,7 +127,12 @@ const NavigationBar = () => {
             setHomeIsSelected(false);
           }}
         >
-          <A href="#" class={categoriesIsSelected() && styles.active_link}>
+          <A
+            href="#"
+            class={`${categoriesIsSelected() && styles.active_link} ${
+              styles.nav_link
+            }`}
+          >
             <Show
               when={categoriesIsSelected()}
               fallback={<img src={categoriesIcon} alt="categories icon" />}
@@ -129,7 +153,12 @@ const NavigationBar = () => {
             setHomeIsSelected(true);
           }}
         >
-          <A href="#" class={homeIsSelected() && styles.active_link}>
+          <A
+            href="#"
+            class={`${homeIsSelected() && styles.active_link} ${
+              styles.nav_link
+            }`}
+          >
             <Show
               when={homeIsSelected()}
               fallback={<img src={homeIcon} alt="home icon" />}
