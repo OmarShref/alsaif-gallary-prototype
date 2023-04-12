@@ -28,6 +28,8 @@ a {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
 }
 a img {
   width: 25px;
@@ -40,7 +42,7 @@ a img {
   -o-transform: translateY(-45%);
   color: var(--color-accent);
 }
-.active_indicator {
+#active_indicator {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -55,4 +57,5 @@ a img {
   -moz-transform: translateY(-45%);
   -ms-transform: translateY(-45%);
   -o-transform: translateY(-45%);
+  left: 0%;
 }
