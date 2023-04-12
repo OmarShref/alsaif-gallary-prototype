@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   background-color: var(--color-light-gray);
-  height: 150px;
+  height: 120px;
 }
 .grid_col {
   position: relative;
