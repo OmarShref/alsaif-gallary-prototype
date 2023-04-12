@@ -35,149 +35,145 @@ const NavigationBar = () => {
     );
   });
   return (
-    <>
-      <div class={styles.container}>
-        <div class={styles.active_indicator_container}>
-          <div class={styles.active_indicator_grid_col}>
-            <span id={styles.active_indicator}></span>
-          </div>
-          <div class={styles.active_indicator_grid_col}></div>
-          <div class={styles.active_indicator_grid_col}></div>
-          <div class={styles.active_indicator_grid_col}></div>
-          <div class={styles.active_indicator_grid_col}></div>
+    <div class={styles.container}>
+      <div class={styles.active_indicator_container}>
+        <div class={styles.active_indicator_grid_col}>
+          <span id={styles.active_indicator}></span>
         </div>
-        {/* profile link  */}
-        <div
-          class={styles.grid_col}
-          onclick={() => {
-            setProfileIsSelected(true);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setHomeIsSelected(false);
-          }}
-        >
-          <A
-            href="#"
-            class={`${profileIsSelected() && styles.active_link} ${
-              styles.nav_link
-            }`}
-          >
-            <Show
-              when={profileIsSelected()}
-              fallback={<img src={profileIcon} alt="profile icon" />}
-            >
-              <img src={profileIconAvtive} alt="profile icon" />
-            </Show>
-            <span>حسابي</span>
-          </A>
-        </div>
-        {/* offes link  */}
-        <div
-          class={styles.grid_col}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setOffersIsSelected(true);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setHomeIsSelected(false);
-          }}
-        >
-          <A
-            href="#"
-            class={`${offersIsSelected() && styles.active_link} ${
-              styles.nav_link
-            }`}
-          >
-            <Show
-              when={offersIsSelected()}
-              fallback={<img src={offersIcon} alt="offers icon" />}
-            >
-              <img src={offersIconActive} alt="offers icon" />
-            </Show>
-            <span>العروض</span>
-          </A>
-        </div>
-        {/* shopping cart link  */}
-        <div
-          class={styles.grid_col}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(true);
-            setOffersIsSelected(false);
-            setHomeIsSelected(false);
-          }}
-        >
-          <A
-            href="#"
-            class={`${shoppingCartIsSelected() && styles.active_link} ${
-              styles.nav_link
-            }`}
-          >
-            <Show
-              when={shoppingCartIsSelected()}
-              fallback={<img src={shoppingCartIcon} alt="shopping cart icon" />}
-            >
-              <img src={shoppingCartIconAvtive} alt="shopping cart icon" />
-            </Show>
-            <span>عربة التسوق</span>
-          </A>
-        </div>
-        {/* categories link  */}
-        <div
-          class={styles.grid_col}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setCategoriesIsSelected(true);
-            setHomeIsSelected(false);
-          }}
-        >
-          <A
-            href="#"
-            class={`${categoriesIsSelected() && styles.active_link} ${
-              styles.nav_link
-            }`}
-          >
-            <Show
-              when={categoriesIsSelected()}
-              fallback={<img src={categoriesIcon} alt="categories icon" />}
-            >
-              <img src={categoriesIconAvtive} alt="categories icon" />
-            </Show>
-            <span>الفئات</span>
-          </A>
-        </div>
-        {/* home link  */}
-        <div
-          class={styles.grid_col}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setHomeIsSelected(true);
-          }}
-        >
-          <A
-            href="#"
-            class={`${homeIsSelected() && styles.active_link} ${
-              styles.nav_link
-            }`}
-          >
-            <Show
-              when={homeIsSelected()}
-              fallback={<img src={homeIcon} alt="home icon" />}
-            >
-              <img src={homeIconActive} alt="home icon" />
-            </Show>
-            <span>الرئيسية</span>
-          </A>
-        </div>
+        <div class={styles.active_indicator_grid_col}></div>
+        <div class={styles.active_indicator_grid_col}></div>
+        <div class={styles.active_indicator_grid_col}></div>
+        <div class={styles.active_indicator_grid_col}></div>
       </div>
-    </>
+      {/* profile link  */}
+      <div
+        class={styles.grid_col}
+        onclick={() => {
+          setProfileIsSelected(true);
+          setCategoriesIsSelected(false);
+          setShoppingCartIsSelected(false);
+          setOffersIsSelected(false);
+          setHomeIsSelected(false);
+        }}
+      >
+        <A
+          href="#"
+          class={`${profileIsSelected() && styles.active_link} ${
+            styles.nav_link
+          }`}
+        >
+          <Show
+            when={profileIsSelected()}
+            fallback={<img src={profileIcon} alt="profile icon" />}
+          >
+            <img src={profileIconAvtive} alt="profile icon" />
+          </Show>
+          <span>حسابي</span>
+        </A>
+      </div>
+      {/* offes link  */}
+      <div
+        class={styles.grid_col}
+        onclick={() => {
+          setProfileIsSelected(false);
+          setOffersIsSelected(true);
+          setCategoriesIsSelected(false);
+          setShoppingCartIsSelected(false);
+          setHomeIsSelected(false);
+        }}
+      >
+        <A
+          href="#"
+          class={`${offersIsSelected() && styles.active_link} ${
+            styles.nav_link
+          }`}
+        >
+          <Show
+            when={offersIsSelected()}
+            fallback={<img src={offersIcon} alt="offers icon" />}
+          >
+            <img src={offersIconActive} alt="offers icon" />
+          </Show>
+          <span>العروض</span>
+        </A>
+      </div>
+      {/* shopping cart link  */}
+      <div
+        class={styles.grid_col}
+        onclick={() => {
+          setProfileIsSelected(false);
+          setCategoriesIsSelected(false);
+          setShoppingCartIsSelected(true);
+          setOffersIsSelected(false);
+          setHomeIsSelected(false);
+        }}
+      >
+        <A
+          href="#"
+          class={`${shoppingCartIsSelected() && styles.active_link} ${
+            styles.nav_link
+          }`}
+        >
+          <Show
+            when={shoppingCartIsSelected()}
+            fallback={<img src={shoppingCartIcon} alt="shopping cart icon" />}
+          >
+            <img src={shoppingCartIconAvtive} alt="shopping cart icon" />
+          </Show>
+          <span>عربة التسوق</span>
+        </A>
+      </div>
+      {/* categories link  */}
+      <div
+        class={styles.grid_col}
+        onclick={() => {
+          setProfileIsSelected(false);
+          setShoppingCartIsSelected(false);
+          setOffersIsSelected(false);
+          setCategoriesIsSelected(true);
+          setHomeIsSelected(false);
+        }}
+      >
+        <A
+          href="#"
+          class={`${categoriesIsSelected() && styles.active_link} ${
+            styles.nav_link
+          }`}
+        >
+          <Show
+            when={categoriesIsSelected()}
+            fallback={<img src={categoriesIcon} alt="categories icon" />}
+          >
+            <img src={categoriesIconAvtive} alt="categories icon" />
+          </Show>
+          <span>الفئات</span>
+        </A>
+      </div>
+      {/* home link  */}
+      <div
+        class={styles.grid_col}
+        onclick={() => {
+          setProfileIsSelected(false);
+          setCategoriesIsSelected(false);
+          setShoppingCartIsSelected(false);
+          setOffersIsSelected(false);
+          setHomeIsSelected(true);
+        }}
+      >
+        <A
+          href="#"
+          class={`${homeIsSelected() && styles.active_link} ${styles.nav_link}`}
+        >
+          <Show
+            when={homeIsSelected()}
+            fallback={<img src={homeIcon} alt="home icon" />}
+          >
+            <img src={homeIconActive} alt="home icon" />
+          </Show>
+          <span>الرئيسية</span>
+        </A>
+      </div>
+    </div>
   );
 };
 
