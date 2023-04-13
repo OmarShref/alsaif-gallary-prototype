@@ -25,20 +25,19 @@
   color: var(--color-dark-gray);
   font-size: 8px;
   background-color: var(--color-light-gray);
-  /*background-color: pink;
-  */
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   user-select: none;
-  pointer-events: none;
+  /* pointer-events: none; */
   transition: 0.2s 0.1s ease;
   -webkit-transition: 0.2s 0.1s ease;
   -moz-transition: 0.2s 0.1s ease;
   -ms-transition: 0.2s 0.1s ease;
   -o-transition: 0.2s 0.1s ease;
+  z-index: 20;
 }
 .nav_link img,
 .nav_link svg {
@@ -83,7 +82,7 @@
   -moz-transform: translateY(-40%);
   -ms-transform: translateY(-40%);
   -o-transform: translateY(-40%);
-  left: 200%;
+  left: 400%;
   transition: 0.2s ease;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;

@@ -1,25 +1,15 @@
 import styles from "./NavigationBar.module.css";
 import { A } from "@solidjs/router";
-import { Show, createSignal, onMount } from "solid-js";
-import homeIcon from "../../assets/home-icon.svg";
-import homeIconActive from "../../assets/home-icon-active.svg";
-import categoriesIcon from "../../assets/categories-icon.svg";
-import categoriesIconAvtive from "../../assets/categories-icon-active.svg";
-import shoppingCartIcon from "../../assets/shopping-cart-icon.svg";
-import shoppingCartIconAvtive from "../../assets/shopping-cart-icon-active.svg";
-import offersIcon from "../../assets/offers-icon.svg";
-import offersIconActive from "../../assets/offers-icon-active.svg";
-import profileIcon from "../../assets/profile-icon.svg";
-import profileIconAvtive from "../../assets/profile-icon-active.svg";
+import { createSignal, onMount } from "solid-js";
 
 const NavigationBar = () => {
   // signals to set links appearance
   const [profileIsSelected, setProfileIsSelected] = createSignal(false);
   const [offersIsSelected, setOffersIsSelected] = createSignal(false);
   const [shoppingCartIsSelected, setShoppingCartIsSelected] =
-    createSignal(true);
+    createSignal(false);
   const [categoriesIsSelected, setCategoriesIsSelected] = createSignal(false);
-  const [homeIsSelected, setHomeIsSelected] = createSignal(false);
+  const [homeIsSelected, setHomeIsSelected] = createSignal(true);
   onMount(() => {
     // get the moving span
     const activeIndicator = document.getElementById(
