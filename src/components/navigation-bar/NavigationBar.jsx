@@ -16,7 +16,7 @@ const NavigationBar = () => {
       `${styles.active_indicator}`
     );
     // set span moving according to every link
-    [...document.getElementsByClassName(`${styles.grid_col}`)].map(
+    [...document.getElementsByClassName(`${styles.nav_link}`)].map(
       (link, i) => {
         link.addEventListener("click", () => {
           activeIndicator.style.left = `calc(${i}*100%)`;
