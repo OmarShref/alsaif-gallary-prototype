@@ -36,21 +36,19 @@ const NavigationBar = () => {
         <div class={styles.active_indicator_grid_col}></div>
       </div>
       {/* profile link  */}
-      <div
-        class={styles.grid_col}
-        onclick={() => {
-          setProfileIsSelected(true);
-          setCategoriesIsSelected(false);
-          setShoppingCartIsSelected(false);
-          setOffersIsSelected(false);
-          setHomeIsSelected(false);
-        }}
-      >
+      <div class={styles.grid_col}>
         <A
-          href="#"
+          href="#123"
           class={`${profileIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
+          onclick={() => {
+            setProfileIsSelected(true);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(false);
+            setOffersIsSelected(false);
+            setHomeIsSelected(false);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,21 +68,19 @@ const NavigationBar = () => {
         </A>
       </div>
       {/* offes link  */}
-      <div
-        class={styles.grid_col}
-        onclick={() => {
-          setProfileIsSelected(false);
-          setOffersIsSelected(true);
-          setCategoriesIsSelected(false);
-          setShoppingCartIsSelected(false);
-          setHomeIsSelected(false);
-        }}
-      >
+      <div class={styles.grid_col}>
         <A
           href="#"
           class={`${offersIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setOffersIsSelected(true);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(false);
+            setHomeIsSelected(false);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,21 +105,19 @@ const NavigationBar = () => {
         </A>
       </div>
       {/* shopping cart link  */}
-      <div
-        class={styles.grid_col}
-        onclick={() => {
-          setProfileIsSelected(false);
-          setCategoriesIsSelected(false);
-          setShoppingCartIsSelected(true);
-          setOffersIsSelected(false);
-          setHomeIsSelected(false);
-        }}
-      >
+      <div class={styles.grid_col}>
         <A
           href="#"
           class={`${shoppingCartIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(true);
+            setOffersIsSelected(false);
+            setHomeIsSelected(false);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -143,21 +137,19 @@ const NavigationBar = () => {
         </A>
       </div>
       {/* categories link  */}
-      <div
-        class={styles.grid_col}
-        onclick={() => {
-          setProfileIsSelected(false);
-          setShoppingCartIsSelected(false);
-          setOffersIsSelected(false);
-          setCategoriesIsSelected(true);
-          setHomeIsSelected(false);
-        }}
-      >
+      <div class={styles.grid_col}>
         <A
           href="#"
           class={`${categoriesIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setShoppingCartIsSelected(false);
+            setOffersIsSelected(false);
+            setCategoriesIsSelected(true);
+            setHomeIsSelected(false);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -177,19 +169,17 @@ const NavigationBar = () => {
         </A>
       </div>
       {/* home link  */}
-      <div
-        class={styles.grid_col}
-        onclick={() => {
-          setProfileIsSelected(false);
-          setCategoriesIsSelected(false);
-          setShoppingCartIsSelected(false);
-          setOffersIsSelected(false);
-          setHomeIsSelected(true);
-        }}
-      >
+      <div class={styles.grid_col}>
         <A
           href="#"
           class={`${homeIsSelected() && styles.active_link} ${styles.nav_link}`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(false);
+            setOffersIsSelected(false);
+            setHomeIsSelected(true);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

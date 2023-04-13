@@ -31,15 +31,12 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   user-select: none;
-  /* pointer-events: none; */
   transition: 0.2s 0.1s ease;
   -webkit-transition: 0.2s 0.1s ease;
   -moz-transition: 0.2s 0.1s ease;
   -ms-transition: 0.2s 0.1s ease;
   -o-transition: 0.2s 0.1s ease;
-  z-index: 20;
 }
-.nav_link img,
 .nav_link svg {
   width: 25px;
 }
