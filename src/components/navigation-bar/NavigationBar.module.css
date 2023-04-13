@@ -40,7 +40,8 @@
   -ms-transition: 0.2s 0.1s ease;
   -o-transition: 0.2s 0.1s ease;
 }
-.nav_link img {
+.nav_link img,
+.nav_link svg {
   width: 25px;
 }
 .active_link {
