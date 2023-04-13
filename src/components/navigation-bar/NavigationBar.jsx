@@ -17,9 +17,9 @@ const NavigationBar = () => {
   const [profileIsSelected, setProfileIsSelected] = createSignal(false);
   const [offersIsSelected, setOffersIsSelected] = createSignal(false);
   const [shoppingCartIsSelected, setShoppingCartIsSelected] =
-    createSignal(false);
+    createSignal(true);
   const [categoriesIsSelected, setCategoriesIsSelected] = createSignal(false);
-  const [homeIsSelected, setHomeIsSelected] = createSignal(true);
+  const [homeIsSelected, setHomeIsSelected] = createSignal(false);
   onMount(() => {
     // get the moving span
     const activeIndicator = document.getElementById(

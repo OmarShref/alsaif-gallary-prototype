@@ -25,6 +25,8 @@
   color: var(--color-dark-gray);
   font-size: 8px;
   background-color: var(--color-light-gray);
+  /*background-color: pink;
+  */
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -75,12 +77,12 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  transform: translateY(-45%);
-  -webkit-transform: translateY(-45%);
-  -moz-transform: translateY(-45%);
-  -ms-transform: translateY(-45%);
-  -o-transform: translateY(-45%);
-  left: 400%;
+  transform: translateY(-40%);
+  -webkit-transform: translateY(-40%);
+  -moz-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  -o-transform: translateY(-40%);
+  left: 200%;
   transition: 0.2s ease;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
@@ -90,10 +92,10 @@
 #active_indicator::after {
   content: "";
   position: absolute;
-  top: 9px;
-  left: -92px;
-  width: 75px;
-  height: 75px;
+  top: 4px;
+  left: -98px;
+  width: 80px;
+  height: 55px;
   border: solid 26px white;
   border-color: white transparent transparent transparent;
   border-radius: 50%;
@@ -101,29 +103,29 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  transform: rotate(26deg);
-  -webkit-transform: rotate(26deg);
-  -moz-transform: rotate(26deg);
-  -ms-transform: rotate(26deg);
-  -o-transform: rotate(26deg);
+  transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
 }
-/* #active_indicator::before {
+#active_indicator::before {
   content: "";
   position: absolute;
-  top: 9px;
-  left: -92px;
-  width: 75px;
-  height: 75px;
-  border: solid 25px white;
+  top: 4px;
+  right: -98px;
+  width: 80px;
+  height: 55px;
+  border: solid 26px white;
   border-color: white transparent transparent transparent;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  transform: rotate(24deg);
-  -webkit-transform: rotate(24deg);
-  -moz-transform: rotate(24deg);
-  -ms-transform: rotate(24deg);
-  -o-transform: rotate(24deg);
-} */
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+}
