@@ -38,7 +38,7 @@ const NavigationBar = () => {
       {/* profile link  */}
       <div class={styles.grid_col}>
         <A
-          href="#123"
+          href="#"
           class={`${profileIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
