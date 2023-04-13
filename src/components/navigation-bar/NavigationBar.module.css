@@ -87,3 +87,43 @@
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
 }
+#active_indicator::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -92px;
+  width: 75px;
+  height: 75px;
+  border: solid 26px white;
+  border-color: white transparent transparent transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: rotate(26deg);
+  -webkit-transform: rotate(26deg);
+  -moz-transform: rotate(26deg);
+  -ms-transform: rotate(26deg);
+  -o-transform: rotate(26deg);
+}
+/* #active_indicator::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -92px;
+  width: 75px;
+  height: 75px;
+  border: solid 25px white;
+  border-color: white transparent transparent transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: rotate(24deg);
+  -webkit-transform: rotate(24deg);
+  -moz-transform: rotate(24deg);
+  -ms-transform: rotate(24deg);
+  -o-transform: rotate(24deg);
+} */
