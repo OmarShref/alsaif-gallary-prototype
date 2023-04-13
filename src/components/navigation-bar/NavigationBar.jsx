@@ -66,7 +66,8 @@ const NavigationBar = () => {
             when={profileIsSelected()}
             fallback={<img src={profileIcon} alt="profile icon" />}
           >
-            <img src={profileIconAvtive} alt="profile icon" />
+            {/* <img src={profileIconAvtive} alt="profile icon" /> */}
+            <object data={profileIconAvtive} type="image/svg+xml"></object>
           </Show>
           <span>حسابي</span>
         </A>
