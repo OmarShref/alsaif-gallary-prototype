@@ -1,6 +1,5 @@
 .container {
   flex-grow: 1;
   overflow: scroll;
-  padding-top: 55px;
   padding-bottom: 100px;
 }
