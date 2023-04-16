@@ -1,17 +1,9 @@
 import styles from "./NavigationBar.module.css";
 import { A } from "@solidjs/router";
-import { createEffect, createSignal } from "solid-js";
+import { createEffect } from "solid-js";
 import { language } from "../../App";
 
 const NavigationBar = () => {
-  // signals to set links appearance
-  const [profileIsSelected, setProfileIsSelected] = createSignal(false);
-  const [offersIsSelected, setOffersIsSelected] = createSignal(false);
-  const [shoppingCartIsSelected, setShoppingCartIsSelected] =
-    createSignal(false);
-  const [categoriesIsSelected, setCategoriesIsSelected] = createSignal(false);
-  const [homeIsSelected, setHomeIsSelected] = createSignal(true);
-
   createEffect(() => {
     // remove previous listener
     [...document.getElementsByClassName(`${styles.nav_link}`)].map(
@@ -52,20 +44,13 @@ const NavigationBar = () => {
           href="/home"
           inactiveClass={`${styles.nav_link}`}
           activeClass={`${styles.nav_link} ${styles.active_link}`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setHomeIsSelected(true);
-          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={homeIsSelected() ? "#be1e2d" : "#646464"}
+            stroke="#646464"
             class="w-6 h-6"
           >
             <path
@@ -83,20 +68,13 @@ const NavigationBar = () => {
           href="/categories"
           inactiveClass={`${styles.nav_link}`}
           activeClass={`${styles.nav_link} ${styles.active_link}`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setCategoriesIsSelected(true);
-            setHomeIsSelected(false);
-          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={categoriesIsSelected() ? "#be1e2d" : "#646464"}
+            stroke="#646464"
             class="w-6 h-6"
           >
             <path
@@ -115,20 +93,13 @@ const NavigationBar = () => {
           href="/cart"
           inactiveClass={`${styles.nav_link}`}
           activeClass={`${styles.nav_link} ${styles.active_link}`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(true);
-            setOffersIsSelected(false);
-            setHomeIsSelected(false);
-          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={shoppingCartIsSelected() ? "#be1e2d" : "#646464"}
+            stroke="#646464"
             class="w-6 h-6"
           >
             <path
@@ -146,20 +117,13 @@ const NavigationBar = () => {
           href="/offers"
           inactiveClass={`${styles.nav_link}`}
           activeClass={`${styles.nav_link} ${styles.active_link}`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setOffersIsSelected(true);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setHomeIsSelected(false);
-          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={offersIsSelected() ? "#be1e2d" : "#646464"}
+            stroke="#646464"
             class="w-6 h-6"
           >
             <path
@@ -182,20 +146,13 @@ const NavigationBar = () => {
           href="/account"
           inactiveClass={`${styles.nav_link}`}
           activeClass={`${styles.nav_link} ${styles.active_link}`}
-          onclick={() => {
-            setProfileIsSelected(true);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setHomeIsSelected(false);
-          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={profileIsSelected() ? "#be1e2d" : "#646464"}
+            stroke="#646464"
             class="w-6 h-6"
           >
             <path

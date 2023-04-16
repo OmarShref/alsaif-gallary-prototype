@@ -48,7 +48,9 @@
   -o-transform: translateY(-45%);
   color: var(--color-accent);
 }
-
+.active_link svg {
+  stroke: var(--color-accent);
+}
 /* active indicator style  */
 
 .active_indicator_container {
