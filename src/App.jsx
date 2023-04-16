@@ -4,6 +4,9 @@ import { Routes, Route } from "@solidjs/router";
 import MainPage from "./components/main-page/MainPage";
 import Home from "./components/home/Home";
 import Categories from "./components/categories/Categories";
+import Cart from "./components/cart/Cart";
+import Offers from "./components/offers/Offers";
+import Account from "./components/account/Account";
 
 export const [language, setLanguage] = createSignal("ar");
 function App() {
@@ -22,8 +25,11 @@ function App() {
       <div class={styles.App}>
         <Routes>
           <Route path="/" component={MainPage}>
-            <Route path="/" component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/categories" component={Categories} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/offers" component={Offers} />
+            <Route path="/account" component={Account} />
           </Route>
         </Routes>
       </div>

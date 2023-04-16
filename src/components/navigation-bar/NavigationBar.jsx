@@ -49,8 +49,9 @@ const NavigationBar = () => {
       {/* home link  */}
       <div class={styles.grid_col}>
         <A
-          href="/"
-          class={`${homeIsSelected() && styles.active_link} ${styles.nav_link}`}
+          href="/home"
+          inactiveClass={`${styles.nav_link}`}
+          activeClass={`${styles.nav_link} ${styles.active_link}`}
           onclick={() => {
             setProfileIsSelected(false);
             setCategoriesIsSelected(false);
@@ -80,9 +81,8 @@ const NavigationBar = () => {
       <div class={styles.grid_col}>
         <A
           href="/categories"
-          class={`${categoriesIsSelected() && styles.active_link} ${
-            styles.nav_link
-          }`}
+          inactiveClass={`${styles.nav_link}`}
+          activeClass={`${styles.nav_link} ${styles.active_link}`}
           onclick={() => {
             setProfileIsSelected(false);
             setShoppingCartIsSelected(false);
@@ -112,10 +112,9 @@ const NavigationBar = () => {
       {/* shopping cart link  */}
       <div class={styles.grid_col}>
         <A
-          href="#"
-          class={`${shoppingCartIsSelected() && styles.active_link} ${
-            styles.nav_link
-          }`}
+          href="/cart"
+          inactiveClass={`${styles.nav_link}`}
+          activeClass={`${styles.nav_link} ${styles.active_link}`}
           onclick={() => {
             setProfileIsSelected(false);
             setCategoriesIsSelected(false);
@@ -144,10 +143,9 @@ const NavigationBar = () => {
       {/* offes link  */}
       <div class={styles.grid_col}>
         <A
-          href="#"
-          class={`${offersIsSelected() && styles.active_link} ${
-            styles.nav_link
-          }`}
+          href="/offers"
+          inactiveClass={`${styles.nav_link}`}
+          activeClass={`${styles.nav_link} ${styles.active_link}`}
           onclick={() => {
             setProfileIsSelected(false);
             setOffersIsSelected(true);
@@ -178,13 +176,12 @@ const NavigationBar = () => {
           <span>العروض</span>
         </A>
       </div>
-      {/* profile link  */}
+      {/* account link  */}
       <div class={styles.grid_col}>
         <A
-          href="#"
-          class={`${profileIsSelected() && styles.active_link} ${
-            styles.nav_link
-          }`}
+          href="/account"
+          inactiveClass={`${styles.nav_link}`}
+          activeClass={`${styles.nav_link} ${styles.active_link}`}
           onclick={() => {
             setProfileIsSelected(true);
             setCategoriesIsSelected(false);
