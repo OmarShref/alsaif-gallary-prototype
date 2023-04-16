@@ -7,16 +7,16 @@ const Header = () => {
   return (
     <>
       <div class={styles.container}>
+        <img src={logoWithoutText} alt="company logo" class={styles.logo} />
+        <div class={styles.search_box}>
+          <img src={searchIcon} alt="search icon" class={styles.search_icon} />
+          <input type="text" dir="auto" placeholder="وش اللي في خاطرك" />
+        </div>
         <img
           src={notificationIcon}
           alt="notification icon"
           class={styles.notification_icon}
         />
-        <div class={styles.search_box}>
-          <input type="text" dir="auto" placeholder="وش اللي في خاطرك" />
-          <img src={searchIcon} alt="search icon" class={styles.search_icon} />
-        </div>
-        <img src={logoWithoutText} alt="company logo" class={styles.logo} />
       </div>
     </>
   );

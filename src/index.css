@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Hide scrollbar for IE, Edge */
   -ms-overflow-style: none;
+  direction: var(--layout-direction);
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -24,14 +25,14 @@ code {
   /* Hide scrollbar for IE, Edge */
   -ms-overflow-style: none;
 }
-*::-webkit-scrollbar {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  display: none;
-}
 html {
   scroll-behavior: smooth;
   /* Hide scrollbar for IE, Edge and Firefox */
   scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none;
 }
 :root {
   --color-accent: #be1e2d;

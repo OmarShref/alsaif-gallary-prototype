@@ -1,6 +1,7 @@
 import styles from "./NavigationBar.module.css";
 import { A } from "@solidjs/router";
-import { createSignal, onMount } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
+import { language } from "../../App";
 
 const NavigationBar = () => {
   // signals to set links appearance
@@ -10,20 +11,30 @@ const NavigationBar = () => {
     createSignal(false);
   const [categoriesIsSelected, setCategoriesIsSelected] = createSignal(false);
   const [homeIsSelected, setHomeIsSelected] = createSignal(true);
-  onMount(() => {
+
+  createEffect(() => {
+    // remove previous listener
+    [...document.getElementsByClassName(`${styles.nav_link}`)].map(
+      (link, i) => {
+        link.removeEventListener("click", () => defineIndicatorMovement(i));
+      }
+    );
     // get the moving span
     const activeIndicator = document.getElementById(
       `${styles.active_indicator}`
     );
+    // define span movement
+    const defineIndicatorMovement = (i) => {
+      activeIndicator.style.left = `calc(${language() === "ar" ? -i : i}*100%)`;
+    };
     // set span moving according to every link
     [...document.getElementsByClassName(`${styles.nav_link}`)].map(
       (link, i) => {
-        link.addEventListener("click", () => {
-          activeIndicator.style.left = `calc(${i}*100%)`;
-        });
+        link.addEventListener("click", () => defineIndicatorMovement(i));
       }
     );
   });
+
   return (
     <div class={styles.container}>
       <div class={styles.active_indicator_container}>
@@ -35,17 +46,80 @@ const NavigationBar = () => {
         <div class={styles.active_indicator_grid_col}></div>
         <div class={styles.active_indicator_grid_col}></div>
       </div>
-      {/* profile link  */}
+      {/* home link  */}
       <div class={styles.grid_col}>
         <A
-          href="#"
-          class={`${profileIsSelected() && styles.active_link} ${
+          href="/"
+          class={`${homeIsSelected() && styles.active_link} ${styles.nav_link}`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(false);
+            setOffersIsSelected(false);
+            setHomeIsSelected(true);
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke={homeIsSelected() ? "#be1e2d" : "#646464"}
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+          <span>الرئيسية</span>
+        </A>
+      </div>
+      {/* categories link  */}
+      <div class={styles.grid_col}>
+        <A
+          href="/categories"
+          class={`${categoriesIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
           onclick={() => {
-            setProfileIsSelected(true);
-            setCategoriesIsSelected(false);
+            setProfileIsSelected(false);
             setShoppingCartIsSelected(false);
+            setOffersIsSelected(false);
+            setCategoriesIsSelected(true);
+            setHomeIsSelected(false);
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke={categoriesIsSelected() ? "#be1e2d" : "#646464"}
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+          <span>الفئات</span>
+        </A>
+      </div>
+
+      {/* shopping cart link  */}
+      <div class={styles.grid_col}>
+        <A
+          href="#"
+          class={`${shoppingCartIsSelected() && styles.active_link} ${
+            styles.nav_link
+          }`}
+          onclick={() => {
+            setProfileIsSelected(false);
+            setCategoriesIsSelected(false);
+            setShoppingCartIsSelected(true);
             setOffersIsSelected(false);
             setHomeIsSelected(false);
           }}
@@ -55,16 +129,16 @@ const NavigationBar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={profileIsSelected() ? "#be1e2d" : "#646464"}
+            stroke={shoppingCartIsSelected() ? "#be1e2d" : "#646464"}
             class="w-6 h-6"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
             />
           </svg>
-          <span>حسابي</span>
+          <span>عربة التسوق</span>
         </A>
       </div>
       {/* offes link  */}
@@ -104,17 +178,17 @@ const NavigationBar = () => {
           <span>العروض</span>
         </A>
       </div>
-      {/* shopping cart link  */}
+      {/* profile link  */}
       <div class={styles.grid_col}>
         <A
           href="#"
-          class={`${shoppingCartIsSelected() && styles.active_link} ${
+          class={`${profileIsSelected() && styles.active_link} ${
             styles.nav_link
           }`}
           onclick={() => {
-            setProfileIsSelected(false);
+            setProfileIsSelected(true);
             setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(true);
+            setShoppingCartIsSelected(false);
             setOffersIsSelected(false);
             setHomeIsSelected(false);
           }}
@@ -124,78 +198,16 @@ const NavigationBar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke={shoppingCartIsSelected() ? "#be1e2d" : "#646464"}
+            stroke={profileIsSelected() ? "#be1e2d" : "#646464"}
             class="w-6 h-6"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-          <span>عربة التسوق</span>
-        </A>
-      </div>
-      {/* categories link  */}
-      <div class={styles.grid_col}>
-        <A
-          href="#"
-          class={`${categoriesIsSelected() && styles.active_link} ${
-            styles.nav_link
-          }`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setCategoriesIsSelected(true);
-            setHomeIsSelected(false);
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke={categoriesIsSelected() ? "#be1e2d" : "#646464"}
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-            />
-          </svg>
-          <span>الفئات</span>
-        </A>
-      </div>
-      {/* home link  */}
-      <div class={styles.grid_col}>
-        <A
-          href="#"
-          class={`${homeIsSelected() && styles.active_link} ${styles.nav_link}`}
-          onclick={() => {
-            setProfileIsSelected(false);
-            setCategoriesIsSelected(false);
-            setShoppingCartIsSelected(false);
-            setOffersIsSelected(false);
-            setHomeIsSelected(true);
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke={homeIsSelected() ? "#be1e2d" : "#646464"}
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-            />
-          </svg>
-          <span>الرئيسية</span>
+          <span>حسابي</span>
         </A>
       </div>
     </div>
