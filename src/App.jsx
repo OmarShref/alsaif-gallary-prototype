@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 import { createEffect, createSignal } from "solid-js";
-import { Routes, Route } from "@solidjs/router";
+import { Routes, Route, Navigate } from "@solidjs/router";
 import MainPage from "./components/main-page/MainPage";
 import Home from "./components/home/Home";
 import Categories from "./components/categories/Categories";
@@ -25,6 +25,7 @@ function App() {
       <div class={styles.App}>
         <Routes>
           <Route path="/" component={MainPage}>
+            <Route path="/" component={<Navigate href="/home" />} />
             <Route path="/home" component={Home} />
             <Route path="/categories" component={Categories} />
             <Route path="/cart" component={Cart} />
