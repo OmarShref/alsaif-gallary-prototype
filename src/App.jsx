@@ -25,7 +25,7 @@ function App() {
       <div class={styles.App}>
         <Routes>
           <Route path="/" component={MainPage}>
-            <Route path="/" component={<Navigate href="/home" />} />
+            {/* <Route path="/" component={<Navigate href="/home" />} /> */}
             <Route path="/home" component={Home} />
             <Route path="/categories" component={Categories} />
             <Route path="/cart" component={Cart} />

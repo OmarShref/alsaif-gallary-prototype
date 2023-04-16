@@ -1,19 +1,33 @@
 import styles from "./NavigationBar.module.css";
 import { A } from "@solidjs/router";
-import { createEffect } from "solid-js";
+import { createEffect, onMount } from "solid-js";
 import { language } from "../../App";
 
 const NavigationBar = () => {
+  onMount(() => {
+    // for refresh indicator movement correct
+    [...document.getElementsByClassName(`${styles.nav_link}`)].map(
+      (link, i) => {
+        if (link.classList.contains(`${styles.active_link}`)) {
+          document.getElementById(
+            `${styles.active_indicator}`
+          ).style.left = `calc(${language() === "ar" ? -i : i}*100%)`;
+          return;
+        }
+      }
+    );
+  });
+
   createEffect(() => {
+    // get the moving span
+    const activeIndicator = document.getElementById(
+      `${styles.active_indicator}`
+    );
     // remove previous listener
     [...document.getElementsByClassName(`${styles.nav_link}`)].map(
       (link, i) => {
         link.removeEventListener("click", () => defineIndicatorMovement(i));
       }
-    );
-    // get the moving span
-    const activeIndicator = document.getElementById(
-      `${styles.active_indicator}`
     );
     // define span movement
     const defineIndicatorMovement = (i) => {
@@ -29,6 +43,7 @@ const NavigationBar = () => {
 
   return (
     <div class={styles.container}>
+      {/* helper divs for indicator ui & movement  */}
       <div class={styles.active_indicator_container}>
         <div class={styles.active_indicator_grid_col}>
           <span id={styles.active_indicator}></span>
@@ -38,6 +53,7 @@ const NavigationBar = () => {
         <div class={styles.active_indicator_grid_col}></div>
         <div class={styles.active_indicator_grid_col}></div>
       </div>
+
       {/* home link  */}
       <div class={styles.grid_col}>
         <A
@@ -62,6 +78,7 @@ const NavigationBar = () => {
           <span>الرئيسية</span>
         </A>
       </div>
+
       {/* categories link  */}
       <div class={styles.grid_col}>
         <A
@@ -111,6 +128,7 @@ const NavigationBar = () => {
           <span>عربة التسوق</span>
         </A>
       </div>
+
       {/* offes link  */}
       <div class={styles.grid_col}>
         <A
@@ -140,6 +158,7 @@ const NavigationBar = () => {
           <span>العروض</span>
         </A>
       </div>
+
       {/* account link  */}
       <div class={styles.grid_col}>
         <A
