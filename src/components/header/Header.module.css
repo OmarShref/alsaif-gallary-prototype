@@ -19,6 +19,7 @@
   background-color: var(--color-light-gray);
   padding: 4px 16px 6px;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   gap: 16px;
@@ -42,4 +43,7 @@
 .search_box input::placeholder {
   text-align: end;
   color: var(--color-medium-gray);
+}
+.search_box input:focus-visible ~ .search_icon {
+  stroke: var(--color-accent);
 }
